@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter DApp</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/6.7.0/ethers.umd.min.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 350px;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        .status {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+            word-break: break-all;
+        }
+        .counter-display {
+            font-size: 48px;
+            font-weight: bold;
+            color: #007bff;
+            margin: 20px 0;
+            background-color: #f8f9fa;
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid #dee2e6;
+        }
+        .btn {
+            font-size: 18px;
+            font-weight: bold;
+            padding: 12px 24px;
+            margin: 5px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        .btn-connect { background-color: #28a745; color: white; width: 100%; }
+        .btn-connect:hover { background-color: #218838; }
+        .btn-inc { background-color: #007bff; color: white; width: 45%; }
+        .btn-inc:hover { background-color: #0069d9; }
+        .btn-dec { background-color: #dc3545; color: white; width: 45%; }
+        .btn-dec:hover { background-color: #c82333; }
+        .btn:disabled { background-color: #6c757d; opacity: 0.65; cursor: not-allowed; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Counter DApp</h1>
+    <div id="walletStatus" class="status">Wallet Not Connected</div>
+    <button id="connectBtn" class="btn btn-connect">Connect Wallet</button>
+    
+    <div class="counter-display" id="counterValue">-</div>
+    
+    <div style="display: flex; justify-content: space-between;">
+        <button id="decBtn" class="btn btn-dec" disabled>-</button>
+        <button id="incBtn" class="btn btn-inc" disabled>+</button>
+    </div>
+</div>
+
+<script src="../script/app.js"></script>
+</body>
+</html>
